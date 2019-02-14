@@ -8,6 +8,6 @@ class Token:
         self.access_token = access_token
     
     def get(self):
-        if self.expiry_time and datetime.utcnow() <= self.expiry_time:
-            self.access_token = self.refresh_method()
+        if not self.expiry_time or datetime.utcnow() <= self.expiry_time:
+            self.access_token, self.expiry_time = self.refresh_method(self.refresh_token)
         return self.access_token
