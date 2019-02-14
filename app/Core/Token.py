@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 
 class Token:
     def __init__(self, refresh_method, refresh_token, access_token="", expiry_time=None):
