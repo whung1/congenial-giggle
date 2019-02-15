@@ -4,7 +4,7 @@ from datetime import datetime
 
 from app.Core.Token import Token
 
-class TestToken:
+class TokenTest:
     def test_when_expired_get_should_get_valid_token(self):
         t = Token(self.fake_refresh_method, self.valid_refresh_token())
         token = t.get()
